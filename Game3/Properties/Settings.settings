@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Game3.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="chislo_z" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">0, 100</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
