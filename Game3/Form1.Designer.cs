@@ -40,11 +40,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 157);
+            this.button1.Location = new System.Drawing.Point(15, 145);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -67,7 +69,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 26);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Загадайте целое число\r\nот 0 до 1000:";
+            this.label1.Text = "Загадайте целое число\r\nот 0 до 999:";
             // 
             // label2
             // 
@@ -80,7 +82,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(96, 157);
+            this.button2.Location = new System.Drawing.Point(96, 145);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -90,7 +92,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(177, 157);
+            this.button3.Location = new System.Drawing.Point(177, 145);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 6;
@@ -100,19 +102,19 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button4.BackColor = System.Drawing.Color.LightGreen;
             this.button4.Location = new System.Drawing.Point(15, 186);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(237, 23);
             this.button4.TabIndex = 7;
-            this.button4.Text = "Начать игру!";
+            this.button4.Text = "Загадать число!";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button3_Start);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(306, 32);
+            this.label3.Location = new System.Drawing.Point(41, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(172, 130);
             this.label3.TabIndex = 8;
@@ -124,7 +126,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(109, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_User);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label4
             // 
@@ -134,11 +136,10 @@
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Попытка:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(15, 215);
+            this.button5.Location = new System.Drawing.Point(15, 232);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 10;
@@ -146,14 +147,24 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Cline);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(294, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(245, 212);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Цель игры:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 281);
+            this.ClientSize = new System.Drawing.Size(575, 267);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -162,8 +173,13 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "TestGame";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,6 +198,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
