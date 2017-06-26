@@ -88,7 +88,7 @@ namespace Game3
                     {
                         if (z > x)
                         {
-                            dialogResult = MessageBox.Show("Конец игры!\nИнформация: Загаданное число было больше.\n\nИграть заново?", "Обман!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                            dialogResult = MessageBox.Show("Конец игры!\nИнформация: Загаданное число было больше.\n\nИграть заново?", "Нечестная игра!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                             if (dialogResult == DialogResult.Yes)
                             {
                                 ClearMethod();
@@ -108,7 +108,23 @@ namespace Game3
             }
             else
             {
-                MessageBox.Show("Число отгадано!\nКоличество попыток: " + Convert.ToString(counter));
+                if (z == x)
+                {
+                    dialogResult = MessageBox.Show("Число уже отгадано!\nКоличество попыток: " + Convert.ToString(counter) + "\n\nИграть заново?", "Нечестная игра!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        ClearMethod();
+                    }
+                    else
+                    {
+                        if (dialogResult == DialogResult.No)
+                        {
+                            Application.Exit();
+                        }
+                    }
+                }
+                else
+                    MessageBox.Show("Число отгадано!\nКоличество попыток: " + Convert.ToString(counter));
             }
         }
         //
@@ -135,7 +151,7 @@ namespace Game3
                 }
                 else
                 {
-                    dialogResult = MessageBox.Show("Конец игры!\nИнформация: Вы пытались обмануть компьютер.\n\nИграть заново?", "Обман!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    dialogResult = MessageBox.Show("Конец игры!\nИнформация: Вы пытались обмануть компьютер.\n\nИграть заново?", "Нечестная игра!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                     if (dialogResult == DialogResult.Yes)
                     {
                         ClearMethod();
@@ -173,7 +189,7 @@ namespace Game3
                     {
                         if (z < x)
                         {
-                            dialogResult = MessageBox.Show("Конец игры!\nИнформация: Загаданное число было меньше.\n\nИграть заново?", "Обман!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                            dialogResult = MessageBox.Show("Конец игры!\nИнформация: Загаданное число было меньше.\n\nИграть заново?", "Нечестная игра!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                             if (dialogResult == DialogResult.Yes)
                             {
                                 ClearMethod();
@@ -193,6 +209,22 @@ namespace Game3
             }
             else
             {
+                if (z == x)
+                {
+                    dialogResult = MessageBox.Show("Число уже отгадано!\nКоличество попыток: " + Convert.ToString(counter) + "\n\nИграть заново?", "Нечестная игра!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        ClearMethod();
+                    }
+                    else
+                    {
+                        if (dialogResult == DialogResult.No)
+                        {
+                            Application.Exit();
+                        }
+                    }
+                }
+                else
                 MessageBox.Show("Число отгадано!\nКоличество попыток: " + Convert.ToString(counter));
             }
         }
@@ -234,21 +266,7 @@ namespace Game3
         //
         public void textBox2_Machine(object sender, EventArgs e)
         {
-            if (z == x)
-            {
-                dialogResult = MessageBox.Show("Количество попыток: " + Convert.ToString(counter) + "\n\nИграть заново?", "Число отгадано!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    ClearMethod();
-                }
-                else
-                {
-                    if (dialogResult == DialogResult.No)
-                    {
-                        Application.Exit();
-                    }
-                }
-            }
+
         }
         //
         // Поле ввода загадываемого числа.
